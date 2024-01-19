@@ -4,7 +4,13 @@ Tipo list - Mutável
 Suporta vários valores de qualquer tipo
 Conhecimentos reutilizáveis - índices e fatiamento
 Métodos úteis: 
-    append, insert, pop, del, clear, extend, +
+    append -> adiciona um item ao final
+    insert -> adiciona um item no índice escolhido
+    pop -> remove do final ou do índice escolhido 
+    del -> apaga um índice
+    clear -> limpa a lista
+    extend -> estende a lista
+    + -> concatena listas
 
 """
 
@@ -23,11 +29,15 @@ Métodos úteis:
 # * Alterando uma lista com índices
 # Create Read Update Delete
 # Criar, ler, alterar, apagar = lista[i] (CRUD)
-lista = [1, 2, 3, 4]
+# lista = [1, 2, 3, 4]
 # lista[2] = 300
 # del lista[2]
 # print(lista[2])
-lista.append(5)
-lista.pop()
-lista.insert(0, 0)
+# lista.append(5)
+# lista.pop()
+# print(lista)
+
+# * Inserindo itens em qualquer índice
+lista = [1, 2, 3, 4]
+lista.insert(0, 5)
 print(lista)
