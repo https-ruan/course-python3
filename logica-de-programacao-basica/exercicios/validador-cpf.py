@@ -48,7 +48,22 @@ contrário disso:
 
 O segundo dígito do CPF é 0
 """
-cpf_enviado_pelo_usuario = '74682489070'
+import re
+import sys
+
+# cpf_enviado_pelo_usuario = input('Digite um CPF: ')\
+#     .replace('.', '')\
+#     .replace('-', '')
+entrada = input('Digite um CPF: ')
+cpf_enviado_pelo_usuario = re.sub(r'[^0-9]', '', entrada)
+
+entrada_e_sequencial = entrada == entrada[0] * len(entrada)
+
+if entrada_e_sequencial:
+    print('Você enviou dados sequenciais.')
+    sys.exit()
+
+
 nove_digitos = cpf_enviado_pelo_usuario[:9]
 multiplicador_1 = 10
 multiplicador_2 = 11
@@ -62,7 +77,7 @@ for digito1 in nove_digitos:
 
 digito_1 = (resultado_digito_1 * 10) % 11
 digito_1 = digito_1 if digito_1 <= 9 else 0
-print(f'{digito_1=}')
+# print(f'{digito_1=}')
 
 # * Segundo Digito
 dez_digitos = nove_digitos + str(digito_1)
@@ -71,11 +86,11 @@ for digito2 in dez_digitos:
     multiplicador_2 -= 1
 digito_2 = (resultado_digito_2 * 10) % 11
 digito_2 = digito_2 if digito_2 <= 9 else 0
-print(f'{digito_2=}')
+# print(f'{digito_2=}')
 
 
 cpf_gerado_pelo_calculo = f'{nove_digitos}{digito_1}{digito_2}'
 if cpf_gerado_pelo_calculo == cpf_enviado_pelo_usuario:
-    print(f'{cpf_enviado_pelo_usuario} é válido')
+    print(f'{entrada} é válido')
 else:
     print(f'CPF inválido')
