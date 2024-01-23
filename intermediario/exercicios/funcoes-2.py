@@ -3,9 +3,9 @@
 """
 
 
-def multiplicador(valor):
+def multiplicador(multiplicador):
     def multiplicar(numero):
-        return valor * numero
+        return numero * multiplicador
 
     return multiplicar
 
