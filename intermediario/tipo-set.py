@@ -43,9 +43,21 @@
 # intersecção & (intersection) - Itens presentes em ambos
 # diferença - Itens presentes apenas no set da esquerda
 # diferença simétrica ^ - Itens que não estão em ambos
-s1 = {1, 2, 3}
-s2 = {2, 3, 4}
-print(s1 | s2)
-print(s1 & s2)
-print(s1 - s2)
-print(s1 ^ s2)
+# s1 = {1, 2, 3}
+# s2 = {2, 3, 4}
+# print(s1 | s2)
+# print(s1 & s2)
+# print(s1 - s2)
+# print(s1 ^ s2)
+
+# * Exemplo de uso dos sets
+letras = set()
+while True:
+    letra = input('Digite: ').lower()
+    letras.add(letra)
+
+    if 'l' in letras:
+        print('PARABENS')
+        break
+
+    print(letras)
