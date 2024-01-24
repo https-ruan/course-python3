@@ -15,7 +15,7 @@
 # print(lista)
 
 # * Mapeamento de dados em list comprehension
-produtos = [
+""" produtos = [
     {'nome': 'p1', 'preco': 10},
     {'nome': 'p2', 'preco': 20},
     {'nome': 'p3', 'preco': 30}
@@ -27,4 +27,17 @@ novos_produtos = [
     for produto in produtos
     if (produto['preco'] >= 20 and produto['preco'] * 1.05) > 10
 ]
-print(*novos_produtos, sep='\n')
+print(*novos_produtos, sep='\n') """
+
+# * List comprehension com mais de um for
+lista = []
+for x in range(3):
+    for y in range(3):
+        lista.append((x, y))
+
+lista = [
+    (x, y)
+    for x in range(3)
+    for y in range(3)
+]
+print(lista)
