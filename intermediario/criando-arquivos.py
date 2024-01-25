@@ -56,4 +56,5 @@ with open(caminho_arquivo, 'w+', encoding='utf8') as arquivo:
     
 import os
 
-os.remove(caminho_arquivo)
+# os.remove(caminho_arquivo) # ou unlink
+# os.rename(caminho_arquivo, caminho_arquivo.replace('arquivo.txt', 'arquivo-renomeado.txt'))
