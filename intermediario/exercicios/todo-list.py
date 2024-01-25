@@ -35,7 +35,6 @@ def desfazer():
     lista_desfeitos.append(lista_tarefas.pop())
     listar()
         
-    
 def refazer():
     if not lista_desfeitos:
         print()
@@ -56,22 +55,30 @@ def adicionar(tarefa):
     
     lista_tarefas.append(tarefa)
     listar()
-    
-
 
 while True:
     print('Comandos: listar, desfazer, refazer')
-    comando = input('Digite uma tarefa ou comando: ') 
+    tarefa = input('Digite uma tarefa ou comando: ') 
+    
+    comandos = {
+        'listar': lambda: listar(),
+        'desfazer': lambda: desfazer(),
+        'refazer': lambda: refazer(),
+        'adicionar': lambda: adicionar(tarefa)
+    }
+    
+    comando = comandos.get(tarefa) if comandos.get(tarefa) is not None else comandos['adicionar']
+    comando()
      
-    if comando == 'listar':
-        listar()
-        continue
-    elif comando == 'desfazer':
-        desfazer()  
-        continue
-    elif comando == 'refazer':
-        refazer()
-        continue
-    else:
-        adicionar(comando)
-        continue
+    # if comando == 'listar':
+    #     listar()
+    #     continue
+    # elif comando == 'desfazer':
+    #     desfazer()  
+    #     continue
+    # elif comando == 'refazer':
+    #     refazer()
+    #     continue
+    # else:
+        # adicionar(comando)
+        # continue
