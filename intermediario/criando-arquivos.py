@@ -19,7 +19,7 @@
 # json.dump = Gera um arquivo json
 # json.load
 
-caminho_arquivo = 'D:\\Desenvolvimento\\Git\\course-python3\\intermediario\\arquivo-criado\\'
+caminho_arquivo = 'D:\\Desenvolvimento\\Git\\course-python3\\intermediario\\arquivos-criados\\'
 caminho_arquivo += 'arquivo.txt'
 
 # arquivo = open(caminho_arquivo, 'w')
