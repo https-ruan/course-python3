@@ -8,5 +8,8 @@
 # O python conhece todos os módulos e pacotes presentes
 # nos caminhos de sys.path
 import modulos
+from modulos import variavel_modulo
 
 print('Este módulo se chama', __name__)
+print(modulos.variavel_modulo)
+print(variavel_modulo)
