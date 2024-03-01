@@ -23,7 +23,7 @@ class LogFileMixin(Log):
 
         with open(LOG_FILE, 'a', encoding='utf8') as arquivo:
             arquivo.write(msg_formatada)
-            arquivo.write('\n')
+            arquivo.write('\n' * 2)
 
 
 class LogPrintMixin(Log):

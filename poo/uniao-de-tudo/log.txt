@@ -4,3 +4,17 @@ Error: qualquer coisa (LogFileMixin)
 Success: qualquer coisa (LogFileMixin)
 Error: qualquer coisa (LogFileMixin)
 Success: qualquer coisa (LogFileMixin)
+Success: Galaxy S está ligado (Smartphone)
+Error: Iphone está desligado (Smartphone)
+Error: qualquer coisa (LogFileMixin)
+
+Success: qualquer coisa (LogFileMixin)
+
+Success: Galaxy S está ligado (Smartphone)
+
+Error: Iphone está desligado (Smartphone)
+
+Success: Galaxy S está ligado (Smartphone)
+
+Error: Iphone está desligado (Smartphone)
+
