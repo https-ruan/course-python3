@@ -13,5 +13,9 @@
 # help(varias_linhas)
 
 # * Em funções
-import funcoes
-help(funcoes)
+# import funcoes
+# help(funcoes)
+
+# * Em classes
+import classes
+help(classes)
