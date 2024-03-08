@@ -35,6 +35,9 @@
 # print(type(Foo))
 
 # * __new__ de uma metaclass -> cria e retorna a classe em si
+from typing import Any
+
+
 def meu_repr(self):
     return f'{type(self).__name__}({self.__dict__})'
 
@@ -48,9 +51,17 @@ class Meta(type):
 
         if 'falar' not in cls.__dict__ or \
                 not callable(cls.__dict__['falar']):
-            raise NotImplemented('Implemente falar')
+            raise NotImplementedError('Implemente falar')
 
         return cls
+
+    def __call__(cls, *args, **kwds):
+        instancia = super().__call__(*args, **kwds)
+
+        if 'nome' not in cls.__dict__:
+            raise NotImplementedError('Crie o attr nome')
+
+        return instancia
 
 
 class Pessoa(object, metaclass=Meta):
