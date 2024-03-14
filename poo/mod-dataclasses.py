@@ -32,8 +32,17 @@ class Pessoa:
     #     self.sobrenome = sobrenome
 
 
+@dataclass(frozen=True)
+class PessoaCongelada:
+    nome: str
+    sobrenome: str
+
+
 if __name__ == '__main__':
     p1 = Pessoa('Ruan', 'Araujo')
     p1.nome_completo = 'Maria Helena'
     print(p1)
     print(p1.nome_completo)
+
+    p2 = PessoaCongelada('Ruan', 'Araujo')
+    print(p2)
