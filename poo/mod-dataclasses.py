@@ -13,15 +13,23 @@ class Pessoa:
     nome: str
     sobrenome: str
 
-    @property
-    def nome_completo(self):
-        return f'{self.nome} {self.sobrenome}'
+    # def __init__(self, nome, sobrenome):
+    #     self.nome = nome
+    #     self.sobrenome = sobrenome
 
-    @nome_completo.setter
-    def nome_completo(self, valor):
-        nome, sobrenome = valor.split()
-        self.nome = nome
-        self.sobrenome = sobrenome
+    def __post_init__(self):  # Executa após init da dataclass (se habilitado)
+        print('Pós init')
+        self.nome_completo = f'{self.nome} {self.sobrenome}'
+
+    # @property
+    # def nome_completo(self):
+    #     return f'{self.nome} {self.sobrenome}'
+
+    # @nome_completo.setter
+    # def nome_completo(self, valor):
+    #     nome, sobrenome = valor.split()
+    #     self.nome = nome
+    #     self.sobrenome = sobrenome
 
 
 if __name__ == '__main__':
