@@ -5,7 +5,7 @@
 # Em resumo: dataclasses são syntax sugar para criar classes normais.
 # Foi descrito na PEP 557 e adicionado na versão 3.7 do Python.
 # doc: https://docs.python.org/3/library/dataclasses.html
-from dataclasses import dataclass, asdict, astuple
+from dataclasses import dataclass, asdict, astuple, field, fields
 
 
 @dataclass
@@ -34,8 +34,12 @@ class Pessoa:
 
 @dataclass(frozen=True)
 class PessoaCongelada:
-    nome: str
-    sobrenome: str
+    nome: str = field(
+        default='Missing',
+    )
+    sobrenome: str = 'Not sent'
+    idade: int = 0
+    lista: list[str] = field(default_factory=list)
 
 
 if __name__ == '__main__':
@@ -44,9 +48,10 @@ if __name__ == '__main__':
     print(p1)
     print(p1.nome_completo)
 
-    p2 = PessoaCongelada('Ruan', 'Araujo')
+    p2 = PessoaCongelada()
     # p2.nome = 'X'
     print(p2)
 
-    print(asdict(p1)[0])
+    print(asdict(p1))
     print(astuple(p2))
+    print(fields(p1))
