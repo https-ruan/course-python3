@@ -36,12 +36,20 @@ sql = (
     'VALUES '
     # '("Ruan Araujo", 85), '
     # '("Helena", 4.3)'
-    '(?, ?)'
+    '(:name, :weight)'
 )
-cursor.execute(sql, ['Ruan Araujo', '85'])
-connection.commit()
+# cursor.execute(sql, ['Ruan Araujo', '85'])
+# cursor.executemany(sql, [('Ruan Araujo', '85'), ('Helena', 4.3)])
+# cursor.execute(sql, {"name": 'Ruan Araujo', "weight": 85})
+cursor.executemany(
+    sql,
+    [
+        {"name": 'Ruan Araujo', "weight": 85},
+        {"name": 'Helena', "weight": 4.3}
+    ]
+)
 
-#
+connection.commit()
 
 cursor.close()
 connection.close()
