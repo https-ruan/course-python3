@@ -30,12 +30,18 @@ connection.commit()
 
 # Registrar valores nas colunas da tabela
 # CUIDADO: sql injection
-cursor.execute(
-    f'INSERT INTO {TABLE_NAME} (id, name, weight) '
+sql = (
+    f'INSERT INTO {TABLE_NAME} '
+    '(name, weight) '
     'VALUES '
-    '(NULL, "Ruan Araujo", 85), (NULL, "Helena", 4.3)'
+    # '("Ruan Araujo", 85), '
+    # '("Helena", 4.3)'
+    '(?, ?)'
 )
+cursor.execute(sql, ['Ruan Araujo', '85'])
 connection.commit()
+
+#
 
 cursor.close()
 connection.close()
