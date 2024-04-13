@@ -2,11 +2,8 @@ import sqlite3
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).parent
-DB_FOLDER = ROOT_DIR / 'db'
 DB_NAME = 'db.sqlite3'
-DB_FILE = DB_FOLDER / DB_NAME
-
-Path.mkdir(DB_FOLDER, exist_ok=True)
+DB_FILE = ROOT_DIR / DB_NAME
 
 TABLE_NAME = 'customers'
 
@@ -45,7 +42,9 @@ cursor.executemany(
     sql,
     [
         {"name": 'Ruan Araujo', "weight": 85},
-        {"name": 'Helena', "weight": 4.3}
+        {"name": 'Helena', "weight": 4.3},
+        {"name": 'João', "weight": 12},
+        {"name": 'Maria', "weight": 24},
     ]
 )
 
